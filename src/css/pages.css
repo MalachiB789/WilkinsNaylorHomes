@@ -129,3 +129,135 @@
 @media (max-width: 980px){
   .hero-inner{ grid-template-columns: 1fr; }
 }
+
+/* ---------------------------
+   Generic page layouts
+---------------------------- */
+
+.page-hero{
+  padding: 44px 0 10px;
+}
+
+.split{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.panel{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.panel-soft{
+  background: var(--soft);
+}
+
+.steps{
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+}
+.step{
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+.step-num{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  border: 1px solid var(--border);
+  background: white;
+}
+.step-title{
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+/* Service cards */
+.service-card{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.mini-list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+.mini-list li{ margin: 6px 0; }
+
+/* FAQ */
+.faq{ display: grid; gap: 10px; }
+.faq-item{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  padding: 12px 14px;
+}
+.faq-item summary{
+  cursor: pointer;
+  font-weight: 800;
+}
+.faq-item p{
+  margin-top: 8px;
+}
+
+/* Forms */
+.form{ margin-top: 14px; }
+.field{
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.field span{
+  font-size: 13px;
+  color: var(--muted);
+}
+input, textarea{
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font: inherit;
+  background: white;
+}
+input:focus, textarea:focus{
+  outline: 2px solid rgba(15, 23, 42, 0.15);
+  outline-offset: 1px;
+}
+
+.contact-list{
+  margin-top: 10px;
+  display: grid;
+  gap: 12px;
+}
+.contact-label{
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.note{
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: white;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .split{ grid-template-columns: 1fr; }
+}

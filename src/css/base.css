@@ -1,17 +1,17 @@
 :root{
   --bg: #ffffff;
-  --text: #111827;
+  --text: #0f172a;
   --muted: #6b7280;
   --border: #e5e7eb;
 
-  --primary: #0f172a; /* deep navy */
-  --primary-2: #1f2937;
+  --primary: #1A2B45;
+  --primary-2: #A28D69;
 
   --card: #ffffff;
-  --soft: #f9fafb;
+  --soft: #f8f7f4;
 
   --radius: 10px;
-  --shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  --shadow: 0 10px 25px rgba(26, 43, 69, 0.08);
 
   --container: 1120px;
 }

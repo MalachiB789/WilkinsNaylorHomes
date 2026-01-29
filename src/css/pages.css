@@ -49,6 +49,12 @@
   box-shadow: var(--shadow);
   min-height: 320px;
 }
+.hero-photo-img{
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
 
 /* Placeholder look (replace with real images later) */
 .photo-placeholder{

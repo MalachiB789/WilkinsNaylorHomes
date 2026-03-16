@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Wilkins Naylor Homes favicon</title>
+  <desc id="desc">A navy W with a gold window motif inside a rounded gold square.</desc>
+  <rect width="512" height="512" rx="52" fill="#ffffff"/>
+  <rect x="22" y="22" width="468" height="468" rx="34" fill="none" stroke="#b99754" stroke-width="18"/>
+  <g fill="#b99754">
+    <rect x="177" y="136" width="28" height="28"/>
+    <rect x="213" y="136" width="28" height="28"/>
+    <rect x="177" y="172" width="28" height="28"/>
+    <rect x="213" y="172" width="28" height="28"/>
+  </g>
+  <text
+    x="256"
+    y="360"
+    text-anchor="middle"
+    font-size="300"
+    font-weight="700"
+    font-family="Georgia, 'Times New Roman', serif"
+    fill="#17325f"
+  >W</text>
+</svg>

@@ -28,7 +28,7 @@
 }
 
 .brand-logo{
-  height: 54px;      /* increase from tiny */
+  height: 64px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -65,7 +65,7 @@
 }
 
 @media (max-width: 640px){
-  .brand-logo{ height: 40px; }
+  .brand-logo{ height: 48px; }
 }
 
 .nav{
@@ -266,7 +266,7 @@
     min-width: auto;
   }
   .brand-logo{
-    height: 48px;
+    height: 56px;
   }
   .nav-toggle{
     display: inline-flex;

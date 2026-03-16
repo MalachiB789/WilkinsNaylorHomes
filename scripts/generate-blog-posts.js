@@ -219,7 +219,9 @@ function renderPostPage(post) {
   <title>${escapeHtml(post.title)} | Blog</title>
   <meta name="description" content="${escapeHtml(post.excerpt)}" />
 
-  <link rel="icon" type="image/jpeg" href="../../../public/favicon.jpeg" />
+  <link rel="icon" href="../../../public/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="../../../public/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../../public/apple-touch-icon.png" />
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
   <link rel="stylesheet" href="../../css/pages.css" />

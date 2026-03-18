@@ -28,7 +28,7 @@
 }
 
 .brand-logo{
-  height: 64px;
+  height: 48px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -328,8 +328,8 @@
     display: grid;
   }
   .nav-sub-link{
-    padding: 8px 0 8px 20px;
-    text-align: left;
+    padding: 8px 0;
+    text-align: center;
     font-size: 13px;
     color: var(--muted);
     font-weight: 500;

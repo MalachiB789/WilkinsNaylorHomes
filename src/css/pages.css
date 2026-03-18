@@ -136,7 +136,6 @@ h1{
   gap: 16px;
   align-items: start;
 }
-
 .panel{
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -427,6 +426,9 @@ input:focus, textarea:focus, select:focus{
   font-size: 13px;
   color: var(--muted);
   margin-bottom: 4px;
+}
+.contact-note-wrap{
+  margin-top: 20px;
 }
 .note{
   margin-top: 16px;

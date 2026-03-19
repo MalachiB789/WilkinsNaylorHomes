@@ -245,52 +245,66 @@ function initializeReviewModal() {
 }
 
 /**
- * Sends contact form submissions directly via HTTP.
+ * Sends remote form submissions directly via HTTP.
  */
-function initializeContactForm() {
-  const formElement = document.querySelector("[data-contact-form]");
-  if (!formElement) return;
-  const statusElement = formElement.querySelector("[data-contact-status]");
-  const submitButton = formElement.querySelector("button[type=\"submit\"]");
+function initializeRemoteForms() {
+  const formElements = document.querySelectorAll("[data-remote-form]");
+  if (!formElements.length) return;
 
-  formElement.addEventListener("submit", async (event) => {
-    event.preventDefault();
+  formElements.forEach((formElement) => {
+    const statusElement = formElement.querySelector("[data-form-status]");
+    const submitButton = formElement.querySelector("button[type=\"submit\"]");
+    const successMessage = (formElement.getAttribute("data-success-message") || "Sent!").trim();
+    const errorMessage = (formElement.getAttribute("data-error-message") || "Message failed to send. Please try again.").trim();
 
-    if (!(submitButton instanceof HTMLButtonElement)) return;
-    const formData = new FormData(formElement);
-    const endpoint = (formElement.getAttribute("data-contact-endpoint") || formElement.getAttribute("action") || "").trim();
-    if (!endpoint) return;
+    formElement.addEventListener("submit", async (event) => {
+      event.preventDefault();
 
-    submitButton.disabled = true;
-    const originalButtonText = submitButton.textContent;
-    let wasSuccessful = false;
-    submitButton.textContent = "Sending...";
-    if (statusElement) statusElement.textContent = "";
+      if (!(submitButton instanceof HTMLButtonElement)) return;
+      const formData = new FormData(formElement);
+      const endpoint = (formElement.getAttribute("data-form-endpoint") || formElement.getAttribute("action") || "").trim();
+      if (!endpoint) return;
 
-    try {
-      const response = await fetch(endpoint, {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
-
-      if (!response.ok) throw new Error(`Unexpected status ${response.status}`);
-      wasSuccessful = true;
-      formElement.reset();
+      submitButton.disabled = true;
+      const originalButtonText = submitButton.textContent;
+      let wasSuccessful = false;
+      submitButton.textContent = "Sending...";
       if (statusElement) statusElement.textContent = "";
-      submitButton.textContent = "Sent!";
-      setTimeout(() => {
-        submitButton.textContent = originalButtonText;
-        submitButton.disabled = false;
-      }, 1600);
-    } catch (_error) {
-      if (statusElement) statusElement.textContent = "Message failed to send. Please try again.";
-    } finally {
-      if (!wasSuccessful) {
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
+
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
+
+        if (!response.ok) throw new Error(`Unexpected status ${response.status}`);
+        wasSuccessful = true;
+        formElement.reset();
+        if (statusElement) statusElement.textContent = "";
+        submitButton.textContent = successMessage;
+
+        const modalElement = formElement.closest("[data-review-modal]");
+        if (modalElement instanceof HTMLElement) {
+          setTimeout(() => {
+            modalElement.hidden = true;
+            document.body.style.overflow = "";
+          }, 1200);
+        }
+
+        setTimeout(() => {
+          submitButton.textContent = originalButtonText;
+          submitButton.disabled = false;
+        }, 1600);
+      } catch (_error) {
+        if (statusElement) statusElement.textContent = errorMessage;
+      } finally {
+        if (!wasSuccessful) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
       }
-    }
+    });
   });
 }
 
@@ -365,5 +379,5 @@ function organizeServicesDropdown() {
   renderCurrentYear();
   initializeReviewsCarousel();
   initializeReviewModal();
-  initializeContactForm();
+  initializeRemoteForms();
 })();

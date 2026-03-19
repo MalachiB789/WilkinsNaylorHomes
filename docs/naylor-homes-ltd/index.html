@@ -142,15 +142,26 @@
             Reviews sent from this form are submitted by email for manual moderation and later publication.
           </p>
 
-          <form class="form" action="mailto:info@wilkinsnaylor.co.uk?subject=Naylor%20Homes%20Ltd%20Review" method="post" enctype="text/plain">
+          <form
+            class="form"
+            action="https://formsubmit.co/ajax/info@wilkinsnaylor.co.uk"
+            method="post"
+            data-remote-form
+            data-form-endpoint="https://formsubmit.co/ajax/info@wilkinsnaylor.co.uk"
+            data-success-message="Review sent!"
+            data-error-message="Review failed to send. Please try again."
+          >
+            <input type="hidden" name="_subject" value="Naylor Homes Ltd Review" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" />
             <label class="field">
               <span>Name</span>
-              <input type="text" name="name" placeholder="Your name" required />
+              <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
             </label>
 
             <label class="field">
               <span>Email</span>
-              <input type="email" name="email" placeholder="you@example.com" required />
+              <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
             </label>
 
             <label class="field">
@@ -178,6 +189,7 @@
             <div class="hero-actions">
               <button class="btn" type="submit">Submit review</button>
             </div>
+            <p class="muted" data-form-status aria-live="polite"></p>
           </form>
         </div>
       </div>

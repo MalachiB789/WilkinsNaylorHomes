@@ -16,5 +16,5 @@ To add a post:
 
 That command rebuilds:
 
-- [src/js/posts.js](/Users/Malachi/Documents/WilkinsNaylorHomes/src/js/posts.js) for the blog listing and homepage preview
-- [src/pages/blog](/Users/Malachi/Documents/WilkinsNaylorHomes/src/pages/blog) for the individual post pages
+- [docs/js/posts.js](/Users/Malachi/Documents/WilkinsNaylorHomes/docs/js/posts.js) for the blog listing and homepage preview
+- [docs/blog](/Users/Malachi/Documents/WilkinsNaylorHomes/docs/blog) for the individual post pages

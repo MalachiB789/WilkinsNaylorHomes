@@ -25,7 +25,7 @@ function rewriteInjectedLinksForNestedBlogPages() {
   document.querySelectorAll("#site-header img[src], #site-footer img[src]").forEach((image) => {
     const src = image.getAttribute("src");
     if (!src) return;
-    if (src.startsWith("../assets/")) {
+    if (src.startsWith("./assets/")) {
       image.setAttribute("src", `../${src}`);
     }
   });
@@ -297,7 +297,7 @@ function organizeServicesDropdown() {
  * Bootstraps shared page chrome and global UI state.
  */
 (async function initializeSiteLayout() {
-  const includeBasePath = isBlogDetailPage() ? "../../includes" : "../includes";
+  const includeBasePath = isBlogDetailPage() ? "../includes" : "./includes";
 
   await Promise.all([
     injectHtmlInclude("site-header", `${includeBasePath}/header.html`),

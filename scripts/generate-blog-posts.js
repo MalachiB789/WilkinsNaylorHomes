@@ -3,8 +3,8 @@ const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT, "src/content/blog");
-const OUTPUT_DIR = path.join(ROOT, "src/pages/blog");
-const POSTS_DATA_FILE = path.join(ROOT, "src/js/posts.js");
+const OUTPUT_DIR = path.join(ROOT, "docs/blog");
+const POSTS_DATA_FILE = path.join(ROOT, "docs/js/posts.js");
 
 function escapeHtml(value) {
   return String(value)
@@ -219,12 +219,11 @@ function renderPostPage(post) {
   <title>${escapeHtml(post.title)} | Blog</title>
   <meta name="description" content="${escapeHtml(post.excerpt)}" />
 
-  <link rel="icon" href="../../../public/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/svg+xml" href="../../../public/favicon.svg" />
-  <link rel="apple-touch-icon" href="../../../public/apple-touch-icon.png" />
-  <link rel="stylesheet" href="../../css/base.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/pages.css" />
+  <link rel="icon" href="../favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
 </head>
 
 <body>
@@ -254,7 +253,7 @@ function renderPostPage(post) {
   </main>
 
   <div id="site-footer"></div>
-  <script src="../../js/main.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>
 `;

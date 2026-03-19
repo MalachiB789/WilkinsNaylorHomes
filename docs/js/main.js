@@ -44,6 +44,26 @@ function getCurrentSection() {
   return "home";
 }
 
+function getSectionFromHref(href) {
+  if (!href) return "";
+
+  const resolvedPath = new URL(href, location.href).pathname
+    .toLowerCase()
+    .replace(/\/index\.html$/, "")
+    .replace(/\/+$/, "");
+  const segments = resolvedPath.split("/").filter(Boolean);
+  const currentSegment = segments.at(-1) || "";
+  const parentSegment = segments.at(-2) || "";
+
+  if (resolvedPath === "") return "home";
+  if (currentSegment === "blog" || parentSegment === "blog") return "blog";
+  if (currentSegment === "about") return "about";
+  if (currentSegment === "contact") return "contact";
+  if (currentSegment === "naylor-homes-ltd") return "naylor-homes-ltd";
+  if (currentSegment === "wilkins-naylor-ltd") return "wilkins-naylor-ltd";
+  return "home";
+}
+
 function rewriteInjectedLinksForNestedPages() {
   const pageDepth = getPageDepth();
   if (pageDepth === 0) return;
@@ -71,12 +91,7 @@ function rewriteInjectedLinksForNestedPages() {
 function highlightCurrentNavLink() {
   const currentSection = getCurrentSection();
   document.querySelectorAll(".nav-link, .nav-sub-link").forEach((navLink) => {
-    const href = (navLink.getAttribute("href") || "").toLowerCase();
-    const normalizedHref = href.replace(/\/+$/, "");
-    const targetSection =
-      normalizedHref === "." || normalizedHref === "./"
-        ? "home"
-        : normalizedHref.replace(/^\.\//, "").split("/")[0];
+    const targetSection = getSectionFromHref(navLink.getAttribute("href") || "");
 
     if (targetSection === currentSection) {
       navLink.classList.add("is-active");

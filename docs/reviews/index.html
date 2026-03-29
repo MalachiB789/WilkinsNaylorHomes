@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Wilkins Naylor Ltd Services | Wilkins Naylor</title>
+  <title>Reviews | Wilkins Naylor</title>
   <meta
     name="description"
-    content="Wilkins Naylor Ltd refurbishes and lets high quality homes across the UK private rental market, offering professionally managed properties for long term tenants."
+    content="Read tenant reviews for Wilkins Naylor and Naylor Homes Ltd, and leave your own review."
   />
 
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
@@ -22,16 +22,11 @@
   <main>
     <section class="page-hero">
       <div class="container">
-        <div class="hero-copy service-hero-copy">
-          <p class="kicker"><span class="hero-badge">Services</span></p>
-          <h1>Wilkins Naylor Ltd</h1>
-          <p class="muted">
-            Wilkins Naylor is a trading name of Wilkins Naylor Ltd.
-          </p>
-          <p class="muted">
-            Wilkins Naylor Ltd is one of the limited companies we operate under. If you rent through this part of our business, your tenancy agreement and formal documents will be issued in this company name.
-          </p>
-        </div>
+        <p class="kicker"><span class="hero-badge">Reviews</span></p>
+        <h1>Tenant Reviews</h1>
+        <p class="muted about-lead">
+          See reviews for Wilkins Naylor and Naylor Homes Ltd, from previous tenants
+        </p>
       </div>
     </section>
     <div class="section-divider" aria-hidden="true"></div>
@@ -39,28 +34,12 @@
     <section class="section">
       <div class="container section-head">
         <div>
-          <h2>Our Service</h2>
-          <p class="muted">Wilkins Naylor Ltd provides homes for families and professionals. We specialise in modernised accommodation with a high-quality finish and a reliable, responsive level of service. Our properties are typically two-to-three-bedroom houses, usually including a main family bathroom and an en-suite bedroom.</p>
-        </div>
-        <p class="muted">We do not operate any HMOs through this part of the business. Our focus is on supporting families and working professionals, often relocating to an area for employment and seeking a stable, long-term home.</p>
-        <a class="text-link" href="../">More info &#8594;</a>
-      </div>
-    </section>
-
-    <section class="section section-light">
-      <div class="container section-head">
-        <div>
-          <h2>Reviews</h2>
+          <h2>All Reviews</h2>
           <p class="muted">Feedback from tenants across our managed properties.</p>
         </div>
       </div>
 
-      <div class="container reviews-carousel" data-reviews-carousel>
-        <button class="reviews-nav reviews-nav-prev" type="button" aria-label="Show previous reviews" data-reviews-prev>
-          &#8592;
-        </button>
-
-        <div class="reviews-track" data-reviews-track>
+      <div class="container grid grid-3">
         <article class="service-card">
           <h3>Kas - Barnoldswick</h3>
           <p class="muted">
@@ -123,18 +102,12 @@
             Friendly, professional housemates and excellent standards in the house and furnishings. Worth the extra compared to other houses viewed in the Skipton area.
           </p>
         </article>
-
-        </div>
-
-        <button class="reviews-nav reviews-nav-next" type="button" aria-label="Show next reviews" data-reviews-next>
-          &#8594;
-        </button>
       </div>
 
       <div class="container review-cta-wrap">
-        <a class="btn review-open-btn" href="../reviews/">
-          See More Reviews
-        </a>
+        <button class="btn review-open-btn" type="button" data-review-modal-open>
+          Leave a review
+        </button>
       </div>
 
       <div class="review-modal" data-review-modal hidden>
@@ -153,9 +126,10 @@
             data-success-message="Review sent!"
             data-error-message="Review failed to send. Please try again."
           >
-            <input type="hidden" name="_subject" value="Wilkins Naylor Ltd Review" />
+            <input type="hidden" name="_subject" value="Reviews Page Review" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" />
+
             <label class="field">
               <span>Name</span>
               <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
@@ -196,8 +170,8 @@
     <section class="cta">
       <div class="container cta-inner">
         <div class="cta-copy">
-          <h2>Need help finding the right room?</h2>
-          <p class="muted">Contact us and we will guide you through current availability and next steps.</p>
+          <h2>Need help with availability or next steps?</h2>
+          <p class="muted">Contact us if you would like to ask about our properties or how we work.</p>
         </div>
         <div class="cta-actions">
           <a class="btn" href="../contact/">Contact Us</a>
@@ -207,6 +181,7 @@
   </main>
 
   <div id="site-footer"></div>
+
   <script src="../js/main.js" defer></script>
 </body>
 </html>

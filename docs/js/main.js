@@ -27,7 +27,7 @@ function getPageDepth() {
   const parentSegment = segments.at(-2) || "";
 
   if (parentSegment === "blog" && currentSegment) return 2;
-  if (["about", "blog", "contact", "naylor-homes-ltd", "wilkins-naylor-ltd"].includes(currentSegment)) return 1;
+  if (["about", "blog", "contact", "reviews", "naylor-homes-ltd", "wilkins-naylor-ltd"].includes(currentSegment)) return 1;
   return 0;
 }
 
@@ -39,6 +39,7 @@ function getCurrentSection() {
   if (currentSegment === "blog" || parentSegment === "blog") return "blog";
   if (currentSegment === "about") return "about";
   if (currentSegment === "contact") return "contact";
+  if (currentSegment === "reviews") return "reviews";
   if (currentSegment === "naylor-homes-ltd") return "naylor-homes-ltd";
   if (currentSegment === "wilkins-naylor-ltd") return "wilkins-naylor-ltd";
   return "home";
@@ -59,6 +60,7 @@ function getSectionFromHref(href) {
   if (currentSegment === "blog" || parentSegment === "blog") return "blog";
   if (currentSegment === "about") return "about";
   if (currentSegment === "contact") return "contact";
+  if (currentSegment === "reviews") return "reviews";
   if (currentSegment === "naylor-homes-ltd") return "naylor-homes-ltd";
   if (currentSegment === "wilkins-naylor-ltd") return "wilkins-naylor-ltd";
   return "home";
